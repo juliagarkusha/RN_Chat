@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1701630538046,
+    "name": "alice",
+    "isOnline": true
+  },
+  {
+    "id": 1701630553224,
+    "name": "bob",
+    "isOnline": true
+  },
+  {
+    "id": 1701630563273,
+    "name": "kiri",
+    "isOnline": false
+  },
+  {
+    "id": 1701330503359,
+    "name": "magna",
+    "isOnline": true
+  }
+]
