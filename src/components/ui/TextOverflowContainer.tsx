@@ -1,17 +1,16 @@
-import React, { ReactElement, ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 import {StyleSheet, View} from "react-native";
-import {COLORS} from "../../theme/colors";
 
 type TextOverflowContainerProps = {
     children: ReactNode,
     maxSize?: number,
 }
 
-const TextOverflowContainer = (TextOverflowContainerProps): ReactElement => {
+const TextOverflowContainer: FC<TextOverflowContainerProps> = (props) => {
     const {
         children,
         maxSize = 100,
-    } = TextOverflowContainerProps;
+    } = props;
 
     const styles = StyleSheet.create({
         container: {

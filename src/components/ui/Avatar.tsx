@@ -1,11 +1,11 @@
 // External deps
-import React, { ReactElement, ReactNode } from "react";
+import React, {FC, ReactElement, ReactNode} from "react";
 import { StyleSheet, View } from "react-native";
 
 // Internal deps
-import { COLORS } from "../../theme/colors";
-import { CONSTANTS } from "../../theme/constants";
+import { CONSTANTS } from "../../utils/constants";
 import Typography from "./Typography";
+import useTheme from "../../hooks/useTheme";
 
 type AvatarProps = {
     name: string,
@@ -13,12 +13,36 @@ type AvatarProps = {
     isOnline?: boolean,
 }
 
-const Avatar = (AvatarProps): ReactElement => {
+const Avatar: FC<AvatarProps> = (props): ReactElement => {
     const {
         name,
         icon,
         isOnline,
-    } = AvatarProps;
+    } = props;
+
+    const { colors } = useTheme();
+
+    const styles = StyleSheet.create({
+        avatar: {
+            width: CONSTANTS.CHAT_AVATAR_SIZE,
+            height: CONSTANTS.CHAT_AVATAR_SIZE,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderColor: colors.blue500,
+            borderWidth: 1,
+            borderRadius: 12
+        },
+        onlineIndicator: {
+            position: "absolute",
+            top: -2,
+            right: -2,
+            width: 10,
+            height: 10,
+            backgroundColor: colors.green500,
+            borderRadius: 5,
+        },
+    });
 
     return (
         <View style={styles.avatar}>
@@ -31,27 +55,5 @@ const Avatar = (AvatarProps): ReactElement => {
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    avatar: {
-        width: CONSTANTS.CHAT_AVATAR_SIZE,
-        height: CONSTANTS.CHAT_AVATAR_SIZE,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderColor: COLORS.blue500,
-        borderWidth: 1,
-        borderRadius: 12
-    },
-    onlineIndicator: {
-        position: "absolute",
-        top: -2,
-        right: -2,
-        width: 10,
-        height: 10,
-        backgroundColor: COLORS.green500,
-        borderRadius: 5,
-    },
-});
 
 export default Avatar;

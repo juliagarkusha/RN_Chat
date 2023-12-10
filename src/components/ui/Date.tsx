@@ -1,19 +1,26 @@
 // External deps
-import React, { ReactElement } from "react";
+import React, {FC} from "react";
 import { StyleSheet, Text } from "react-native";
 import dayjs from "dayjs";
 
 // Internal deps
-import { COLORS } from "../../theme/colors";
+import useTheme from "../../hooks/useTheme";
 
 type DateProps = {
     date: string,
 }
 
-const Date = (DateProps): ReactElement => {
+const Date: FC<DateProps> = (props) => {
     const {
         date,
-    } = DateProps;
+    } = props;
+    const { colors } = useTheme();
+    const styles = StyleSheet.create({
+        date: {
+            color: colors.gray500,
+            fontSize: 12,
+        },
+    });
 
     return (
         <Text style={styles.date}>
@@ -21,12 +28,5 @@ const Date = (DateProps): ReactElement => {
         </Text>
     )
 }
-
-const styles = StyleSheet.create({
-    date: {
-        color: COLORS.gray500,
-        fontSize: 12,
-    },
-});
 
 export default Date;

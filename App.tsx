@@ -1,26 +1,19 @@
 // External deps
 import { ReactElement } from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
 
 // Internal deps
 import ChatList from "./src/screens/ChatList";
-import { COLORS } from "./src/theme/colors";
+import Default from "./src/layouts/Default/Default";
+import ThemeProvider from "./src/contexts/Theme";
 
 const App = (): ReactElement => {
   return (
-    <SafeAreaView style={styles.container}>
-      <ChatList />
-    </SafeAreaView>
+      <ThemeProvider>
+          <Default>
+            <ChatList />
+          </Default>
+      </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.blue900,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-  },
-});
 
 export default App;
