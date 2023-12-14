@@ -3,14 +3,14 @@ import React, {FC, ReactElement} from "react";
 import { StyleSheet, View, Dimensions } from "react-native";
 
 // Internal deps
-import { CONSTANTS } from "../../utils/constants";
-import membersData from "../../mocks/members.json";
-import Card from "../ui/Card";
-import Avatar from "../ui/Avatar";
-import LockIcon from "../../assets/icons/LockIcon";
-import MessageCircleIcon from "../../assets/icons/MessageCircleIcon";
-import Date from "../ui/Date";
-import Badge from "../ui/Badge";
+import { CONSTANTS } from "../../../utils/constants";
+import membersData from "../../../mocks/members.json";
+import Card from "../../ui/Card";
+import Avatar from "../../ui/Avatar";
+import LockIcon from "../../../assets/icons/LockIcon";
+import MessageCircleIcon from "../../../assets/icons/MessageCircleIcon";
+import Date from "../../ui/Date";
+import Badge from "../../ui/Badge";
 import PreviewMessageBody from "../Message/PreviewMessageBody";
 import ChatName from "./ChatName";
 

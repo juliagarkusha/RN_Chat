@@ -3,10 +3,10 @@ import React, {FC, ReactElement} from "react";
 import { Dimensions } from "react-native";
 
 // Internal deps
-import { CONSTANTS } from "../../utils/constants.ts";
-import Typography from "../ui/Typography";
-import TextOverflowContainer from "../ui/TextOverflowContainer";
-import useTheme from "../../hooks/useTheme";
+import { CONSTANTS } from "../../../utils/constants.ts";
+import Typography from "../../ui/Typography";
+import TextOverflowContainer from "../../ui/TextOverflowContainer";
+import useTheme from "../../../hooks/useTheme";
 
 type PreviewMessageBodyProps = {
     message?: string,

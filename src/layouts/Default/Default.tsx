@@ -4,9 +4,11 @@ import { SafeAreaView, StyleSheet } from "react-native";
 
 // Internal deps
 import useTheme from "../../hooks/useTheme";
+import ChatHeader from "../../components/common/Chat/ChatHeader/ChatHeader";
 
 const Default: FC<PropsWithChildren> = ({ children }) => {
-    const { colors, gap } = useTheme()
+    const { colors, gap } = useTheme();
+
     const styles = StyleSheet.create({
         list: {
             paddingVertical: gap,
@@ -19,6 +21,7 @@ const Default: FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <SafeAreaView style={styles.list}>
+            <ChatHeader />
             {children}
         </SafeAreaView>
     )

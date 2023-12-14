@@ -32,9 +32,6 @@ const Typography: FC<TypographyProps> = (props) => {
         },
     });
 
-    console.log('debug text: ', text);
-    console.log('debug lineThrough: ', lineThrough);
-
     if (isEllipSizeMode) {
         return (
             <Text style={styles.text} ellipsizeMode="tail" numberOfLines={1}>

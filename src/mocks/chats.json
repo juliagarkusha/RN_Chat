@@ -28,6 +28,20 @@
     "members": [1701630538046, 1701630553224, 1701630563273, 1701330503359]
   },
   {
+    "id": 3901463446979,
+    "name": "React Native",
+    "isChannel": true,
+    "isPrivate": true,
+    "isMuted": false,
+    "lastMessage": {
+      "date": 1701626350000,
+      "body": "React Native"
+    },
+    "unreadMessagesCount": 20,
+    "removed": false,
+    "members": [1701630563273, 1701330503359]
+  },
+  {
     "id": 3701462120170,
     "name": "Alice",
     "isChannel": false,
@@ -35,7 +49,7 @@
     "isMuted": false,
     "lastMessage": {
       "date": 1699970350000,
-      "body": "333"
+      "body": "33333333333"
     },
     "unreadMessagesCount": 1,
     "removed": false,
@@ -106,6 +120,34 @@
     "lastMessage": {
       "date": 1701626350000,
       "body": "qqwwqwqwqqwwwqwqwwqwqqwqwwqwqwqwq"
+    },
+    "unreadMessagesCount": 1,
+    "removed": false,
+    "members": [1701630563273, 1701330503359]
+  },
+  {
+    "id": 3901463450179,
+    "name": "General",
+    "isChannel": true,
+    "isPrivate": false,
+    "isMuted": false,
+    "lastMessage": {
+      "date": 1701626350000,
+      "body": "123"
+    },
+    "unreadMessagesCount": 1,
+    "removed": false,
+    "members": [1701630563273, 1701330503359]
+  },
+  {
+    "id": 3901463350156,
+    "name": "Alice, Bob, Kiri",
+    "isChannel": false,
+    "isPrivate": true,
+    "isMuted": false,
+    "lastMessage": {
+      "date": 1701626350777,
+      "body": "qwerty"
     },
     "unreadMessagesCount": 1,
     "removed": false,
