@@ -1,9 +1,9 @@
 // External deps
-import React, { ReactElement } from "react";
+import React, {FC, ReactElement} from "react";
 import { StyleSheet, View, Dimensions } from "react-native";
 
 // Internal deps
-import { CONSTANTS } from "../../theme/constants";
+import { CONSTANTS } from "../../utils/constants";
 import membersData from "../../mocks/members.json";
 import Card from "../ui/Card";
 import Avatar from "../ui/Avatar";
@@ -23,9 +23,10 @@ type ChatItemProps = {
     unreadMessagesCount: number,
     lastMessageBody: string,
     lastMessageDate: string,
+    removed: boolean,
 }
 
-const ChatItem = (ChatItemProps): ReactElement => {
+const ChatItem: FC<ChatItemProps> = (props): ReactElement => {
     const {
         id,
         name,
@@ -35,7 +36,30 @@ const ChatItem = (ChatItemProps): ReactElement => {
         unreadMessagesCount,
         lastMessageBody,
         lastMessageDate,
-    } = ChatItemProps;
+        removed = false,
+    } = props;
+
+    const styles = StyleSheet.create({
+        column: {
+            display: "flex",
+            flexDirection: "column",
+        },
+        row: {
+            width: Dimensions.get('window').width - CONSTANTS.CHAT_AVATAR_SIZE - CONSTANTS.GAP*3,
+        },
+        textRow: {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+        },
+        dateRow: {
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: "row",
+            alignItems: "center",
+        },
+    });
 
     const onlinePrivateChatMember = !isChannel && isPrivate
         ? membersData.find((member) => member.id === members[0] && member.isOnline && member.id !== CONSTANTS.SELF_ID)
@@ -46,7 +70,7 @@ const ChatItem = (ChatItemProps): ReactElement => {
             return;
         }
 
-        return isPrivate ? <MessageCircleIcon /> : <LockIcon />
+        return isPrivate ? <LockIcon /> : <MessageCircleIcon />
     }
 
     return (
@@ -54,7 +78,7 @@ const ChatItem = (ChatItemProps): ReactElement => {
             <Avatar icon={getChatAvatar()} name={name} isOnline={onlinePrivateChatMember ? onlinePrivateChatMember.isOnline : false}/>
             <View style={styles.column}>
                 <View style={[styles.textRow, styles.row]}>
-                    <ChatName name={name} />
+                    <ChatName name={name} removed={removed} />
                     <Date date={lastMessageDate} />
                 </View>
                 <View style={[styles.dateRow, styles.row]}>
@@ -67,27 +91,5 @@ const ChatItem = (ChatItemProps): ReactElement => {
         </Card>
     )
 }
-
-const styles = StyleSheet.create({
-    column: {
-      display: "flex",
-      flexDirection: "column",
-    },
-    row: {
-        width: Dimensions.get('window').width - CONSTANTS.CHAT_AVATAR_SIZE - CONSTANTS.GAP*3,
-    },
-    textRow: {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-    },
-    dateRow: {
-      display: "flex",
-      justifyContent: "space-between",
-      flexDirection: "row",
-      alignItems: "center",
-    },
-});
 
 export default ChatItem;

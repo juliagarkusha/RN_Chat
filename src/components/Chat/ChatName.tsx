@@ -1,20 +1,22 @@
 // External deps
-import React, { ReactElement } from "react";
-import { Dimensions } from "react-native";
+import React, { FC } from "react";
+import { Dimensions  } from "react-native";
 
 // Internal deps
-import { CONSTANTS } from "../../theme/constants";
+import { CONSTANTS } from "../../utils/constants";
 import Typography from "../ui/Typography";
 import TextOverflowContainer from "../ui/TextOverflowContainer";
 
 type ChatNameProps = {
-    name: string,
+    name: string;
+    removed: boolean;
 }
 
-const ChatName = (ChatNameProps): ReactElement => {
+const ChatName: FC<ChatNameProps> = (props) => {
     const {
         name,
-    } = ChatNameProps;
+        removed = false,
+    } = props;
 
     return (
         <TextOverflowContainer
@@ -24,9 +26,12 @@ const ChatName = (ChatNameProps): ReactElement => {
                 text={name}
                 viewType="title"
                 isEllipSizeMode
+                lineThrough={removed}
             />
         </TextOverflowContainer>
     )
 }
+
+
 
 export default ChatName;

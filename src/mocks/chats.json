@@ -10,6 +10,7 @@
       "body": "11"
     },
     "unreadMessagesCount": 0,
+    "removed": false,
     "members": [1701630538046, 1701630553224, 1701630563273, 1701330503359]
   },
   {
@@ -23,6 +24,7 @@
       "body": "22"
     },
     "unreadMessagesCount": 5,
+    "removed": false,
     "members": [1701630538046, 1701630553224, 1701630563273, 1701330503359]
   },
   {
@@ -36,6 +38,7 @@
       "body": "333"
     },
     "unreadMessagesCount": 1,
+    "removed": false,
     "members": [1701630538046, 1701330503359]
   },
   {
@@ -49,6 +52,7 @@
       "body": "qqwwqwqwqqwwwqwqwwqwqqwqwwqwqwqwq"
     },
     "unreadMessagesCount": 0,
+    "removed": false,
     "members": [1701630538046, 1701630553224, 1701630563273, 1701330503359]
   },
   {
@@ -62,6 +66,7 @@
       "body": "qqwwqwqwqqwwwqwqwwqwqqwqwwqwqwqfffrfrfeefwfweewffewfewfewfwefewfewq"
     },
     "unreadMessagesCount": 12,
+    "removed": false,
     "members": [1701630538046, 1701630553224, 1701630563273, 1701330503359]
   },
   {
@@ -75,6 +80,7 @@
       "body": "4336446554 544566555466456 55556655445664 5646647766656466477666 56466477666"
     },
     "unreadMessagesCount": 1011,
+    "removed": true,
     "members": [1701630553224, 1701330503359]
   },
   {
@@ -88,6 +94,7 @@
       "body": "tetsttetsttetsttetsttetsttetsttetsttetst"
     },
     "unreadMessagesCount": 0,
+    "removed": true,
     "members": [1701630538046, 1701630553224, 1701630563273, 1701330503359]
   },
   {
@@ -101,6 +108,7 @@
       "body": "qqwwqwqwqqwwwqwqwwqwqqwqwwqwqwqwq"
     },
     "unreadMessagesCount": 1,
+    "removed": false,
     "members": [1701630563273, 1701330503359]
   }
 ]
