@@ -5,13 +5,16 @@ import { ReactElement } from 'react';
 import ChatList from "./src/screens/ChatList";
 import Default from "./src/layouts/Default/Default";
 import ThemeProvider from "./src/contexts/Theme";
+import ChatsProvider from "./src/contexts/Chats";
 
 const App = (): ReactElement => {
   return (
       <ThemeProvider>
-          <Default>
-            <ChatList />
-          </Default>
+          <ChatsProvider>
+              <Default>
+                  <ChatList />
+              </Default>
+          </ChatsProvider>
       </ThemeProvider>
   );
 }

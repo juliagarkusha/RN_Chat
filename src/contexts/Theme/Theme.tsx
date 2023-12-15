@@ -17,12 +17,15 @@ type ShadowType = {
 type ThemePropsType = {
     colors: ColorsType;
     gap: number;
+    iconButtonSize: number;
+    borderRadius: number;
     shadow: (width: number, height: number, radius: number , color: string, opacity: number) => ShadowType | {};
 }
 
 const defaultValue: ThemePropsType = {
     colors: {
         blue900: '#1B202E',
+        blue600: '#34394B',
         blue500: '#303447',
         blue200: 'rgba(14, 120, 248, 0.54)',
         gray500: '#C7CCD6',
@@ -30,6 +33,8 @@ const defaultValue: ThemePropsType = {
         white: '#ffffff',
     },
     gap: 16,
+    iconButtonSize: 40,
+    borderRadius: 12,
     shadow: () => ({}),
 }
 
@@ -56,6 +61,8 @@ const ThemeProvider: FC<PropsWithChildren> = (props) => {
             value={{
                 colors: defaultValue.colors,
                 gap: defaultValue.gap,
+                iconButtonSize: defaultValue.iconButtonSize,
+                borderRadius: defaultValue.borderRadius,
                 shadow,
             }}
         >

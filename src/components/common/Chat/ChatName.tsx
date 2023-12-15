@@ -3,9 +3,9 @@ import React, { FC } from "react";
 import { Dimensions  } from "react-native";
 
 // Internal deps
-import { CONSTANTS } from "../../utils/constants";
-import Typography from "../ui/Typography";
-import TextOverflowContainer from "../ui/TextOverflowContainer";
+import { CONSTANTS } from "../../../utils/constants";
+import Typography from "../../ui/Typography";
+import TextOverflowContainer from "../../ui/TextOverflowContainer";
 
 type ChatNameProps = {
     name: string;
