@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ChatsContext } from "../contexts/Chats";
 
-const useTheme = () => useContext(ChatsContext);
+const useChats = () => useContext(ChatsContext);
 
-export default useTheme;
+export default useChats;

@@ -25,9 +25,12 @@ type ThemePropsType = {
 const defaultValue: ThemePropsType = {
     colors: {
         blue900: '#1B202E',
+        blue700: '#242838',
         blue600: '#34394B',
         blue500: '#303447',
+        blue300: '#0E78F8',
         blue200: 'rgba(14, 120, 248, 0.54)',
+        gray600: '#8A8F9B',
         gray500: '#C7CCD6',
         green500: '#3BA55D',
         white: '#ffffff',
