@@ -9,7 +9,7 @@ import TextOverflowContainer from "../../ui/TextOverflowContainer";
 
 type ChatNameProps = {
     name: string;
-    removed: boolean;
+    removed?: boolean;
 }
 
 const ChatName: FC<ChatNameProps> = (props) => {

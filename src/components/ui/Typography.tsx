@@ -9,7 +9,7 @@ type TypographyProps = {
     viewType?: 'title' | 'text',
     color?: string,
     isEllipSizeMode?: boolean,
-    lineThrough: boolean,
+    lineThrough?: boolean,
 }
 
 const Typography: FC<TypographyProps> = (props) => {

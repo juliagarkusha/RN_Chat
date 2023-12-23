@@ -1,0 +1,310 @@
+[
+  {
+    "id": 1,
+    "chatId": 1701462120133,
+    "body": "Hello, how are you?",
+    "date": 1701431950000,
+    "sender": {
+      "id": 1701630538046,
+      "name": "alice",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 2,
+    "chatId": 1701462120133,
+    "body": "I'm good, thanks!",
+    "date": 1703168285000,
+    "sender": {
+      "id": 1701630553224,
+      "name": "bob",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 3,
+    "chatId": 1701462120133,
+    "body": "Anyone up for a meeting tomorrow?",
+    "date": 1703254685000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+  {
+    "id": 25,
+    "chatId": 1701462120133,
+    "body": "Sure, I'm available!",
+    "date": 1703305485000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+  {
+    "id": 26,
+    "chatId": 1701462120133,
+    "body": "Count me in too!",
+    "date": 1703326885000,
+    "sender": {
+      "id": 1701630553224,
+      "name": "bob",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 27,
+    "chatId": 1701462120133,
+    "body": "I have some urgent work, can we reschedule?",
+    "date": 1703388685000,
+    "sender": {
+      "id": 1701630538046,
+      "name": "alice",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 28,
+    "chatId": 1701462120133,
+    "body": "I'll join the meeting too!",
+    "date": 1703410085000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+
+  {
+    "id": 4,
+    "chatId": 1201466720534,
+    "body": "Welcome to the public channel!",
+    "date": 1689062400000,
+    "sender": {
+      "id": 1701630538046,
+      "name": "alice",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 5,
+    "chatId": 1201466720534,
+    "body": "What's the topic of discussion today?",
+    "date": 1689148800000,
+    "sender": {
+      "id": 1701630553224,
+      "name": "bob",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 6,
+    "chatId": 1201466720534,
+    "body": "Let's talk about upcoming events.",
+    "date": 1610496000000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+
+  {
+    "id": 7,
+    "chatId": 3901463446979,
+    "body": "React Native is awesome!",
+    "date": 1610582400000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+  {
+    "id": 8,
+    "chatId": 3901463446979,
+    "body": "I'm working on a React Native project too.",
+    "date": 1610582400000,
+    "sender": {
+      "id": 1701330503359,
+      "name": "magna",
+      "isOnline": true
+    }
+  },
+
+  {
+    "id": 9,
+    "chatId": 3701462120170,
+    "body": "Hi Alice, how's it going?",
+    "date": 1610668800000,
+    "sender": {
+      "id": 1701630538046,
+      "name": "alice",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 10,
+    "chatId": 3701462120170,
+    "body": "Not bad, thanks! How about you?",
+    "date": 1610668800000,
+    "sender": {
+      "id": 1701330503359,
+      "name": "magna",
+      "isOnline": true
+    }
+  },
+
+  {
+    "id": 11,
+    "chatId": 5701464520273,
+    "body": "Discussing the latest development trends.",
+    "date": 1610928000000,
+    "sender": {
+      "id": 1701630538046,
+      "name": "alice",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 12,
+    "chatId": 5701464520273,
+    "body": "Any new libraries or frameworks worth trying?",
+    "date": 1611014400000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+
+  {
+    "id": 13,
+    "chatId": 4901462120111,
+    "body": "Working on a React project with some cool features.",
+    "date": 1611100800000,
+    "sender": {
+      "id": 1701630553224,
+      "name": "bob",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 14,
+    "chatId": 4901462120111,
+    "body": "What's your project about?",
+    "date": 1611187200000,
+    "sender": {
+      "id": 1701330503359,
+      "name": "magna",
+      "isOnline": true
+    }
+  },
+
+  {
+    "id": 15,
+    "chatId": 2801462120176,
+    "body": "Hey Bob, long time no see!",
+    "date": 1611273600000,
+    "sender":   {
+      "id": 1701630553224,
+      "name": "bob",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 16,
+    "chatId": 2801462120176,
+    "body": "Yeah, been busy with work. How about you?",
+    "date": 1611273600000,
+    "sender": {
+      "id": 1701330503359,
+      "name": "magna",
+      "isOnline": true
+    }
+  },
+
+  {
+    "id": 17,
+    "chatId": 4701468990191,
+    "body": "Testing, testing, 1, 2, 3...",
+    "date": 1611360000000,
+    "sender": {
+      "id": 1701630538046,
+      "name": "alice",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 18,
+    "chatId": 4701468990191,
+    "body": "Is this thing on?",
+    "date": 1611446400000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+
+  {
+    "id": 19,
+    "chatId": 3901463450178,
+    "body": "Hello Kiri, how's everything?",
+    "date": 1611532800000,
+    "sender": 1701630563273},
+  {
+    "id": 20,
+    "chatId": 3901463450178,
+    "body": "All good, thanks for asking!",
+    "date": 1611619200000,
+    "sender": {
+      "id": 1701330503359,
+      "name": "magna",
+      "isOnline": true
+    }
+  },
+
+  {
+    "id": 21,
+    "chatId": 3901463450179,
+    "body": "Welcome to the General channel!",
+    "date": 1609459200000,
+    "sender": 1701630563273},
+  {
+    "id": 22,
+    "chatId": 3901463450179,
+    "body": "Feel free to discuss any topics here.",
+    "date": 1609459200000,
+    "sender": {
+      "id": 1701330503359,
+      "name": "magna",
+      "isOnline": true
+    }
+  },
+
+  {
+    "id": 23,
+    "chatId": 3901463350156,
+    "body": "Hello everyone!",
+    "date": 1609545600000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+  {
+    "id": 24,
+    "chatId": 3901463350156,
+    "body": "What's the plan for today?",
+    "date": 1612051200000,
+    "sender": {
+      "id": 1701330503359,
+      "name": "magna",
+      "isOnline": true
+    }
+  }
+]

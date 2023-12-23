@@ -20,6 +20,7 @@ type ThemePropsType = {
     iconButtonSize: number;
     borderRadius: number;
     shadow: (width: number, height: number, radius: number , color: string, opacity: number) => ShadowType | {};
+    list: {},
 }
 
 const defaultValue: ThemePropsType = {
@@ -33,12 +34,20 @@ const defaultValue: ThemePropsType = {
         gray600: '#8A8F9B',
         gray500: '#C7CCD6',
         green500: '#3BA55D',
+        orange500: '#E98510',
         white: '#ffffff',
     },
     gap: 16,
     iconButtonSize: 40,
     borderRadius: 12,
     shadow: () => ({}),
+    list: {
+        paddingVertical: 16,
+        flex: 1,
+        backgroundColor: '#1B202E',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+    },
 }
 
 export const ThemeContext = createContext<ThemePropsType>(defaultValue);
@@ -67,6 +76,7 @@ const ThemeProvider: FC<PropsWithChildren> = (props) => {
                 iconButtonSize: defaultValue.iconButtonSize,
                 borderRadius: defaultValue.borderRadius,
                 shadow,
+                list: defaultValue.list,
             }}
         >
             {children}

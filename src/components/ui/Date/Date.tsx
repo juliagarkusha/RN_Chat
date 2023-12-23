@@ -4,26 +4,26 @@ import { StyleSheet, Text } from "react-native";
 import dayjs from "dayjs";
 
 // Internal deps
-import useTheme from "../../hooks/useTheme";
+import useTheme from "../../../hooks/useTheme";
+
+//Local deps
+import styles from "./styles";
 
 type DateProps = {
     date: string,
+    viewType: 'sm' | 'md',
 }
 
 const Date: FC<DateProps> = (props) => {
     const {
         date,
+        viewType,
     } = props;
     const { colors } = useTheme();
-    const styles = StyleSheet.create({
-        date: {
-            color: colors.gray500,
-            fontSize: 12,
-        },
-    });
+    const dateStyles = styles(colors.gray500);
 
     return (
-        <Text style={styles.date}>
+        <Text style={[dateStyles.date, viewType === 'sm' ? dateStyles.dateSm : dateStyles.dateMd]}>
             {dayjs(date).format('MMM D, YYYY')}
         </Text>
     )
