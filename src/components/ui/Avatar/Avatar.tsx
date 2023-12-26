@@ -13,7 +13,7 @@ type AvatarProps = {
     name: string,
     icon?: ReactNode,
     isOnline?: boolean,
-    viewType: 'chat' | 'avatar',
+    viewType?: 'chat' | 'avatar',
 }
 
 const Avatar: FC<AvatarProps> = (props): ReactElement => {

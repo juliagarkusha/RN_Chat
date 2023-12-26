@@ -20,7 +20,7 @@ import dayjs, { Dayjs } from 'dayjs';
 
 // Internal deps
 import Pagination from "../../ui/Slider/Pagination/Pagination";
-import Button from "../../ui/Button";
+import Button from "../../ui/Button/Button";
 import useTheme from "../../../hooks/useTheme";
 
 export type ItemType = {

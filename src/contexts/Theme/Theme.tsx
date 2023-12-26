@@ -20,6 +20,7 @@ type ThemePropsType = {
     iconButtonSize: number;
     borderRadius: number;
     shadow: (width: number, height: number, radius: number , color: string, opacity: number) => ShadowType | {};
+    h1: {},
     list: {},
     blurContainer: {}
 }
@@ -42,6 +43,12 @@ const defaultValue: ThemePropsType = {
     iconButtonSize: 40,
     borderRadius: 12,
     shadow: () => ({}),
+    h1: {
+        fontSize: 24,
+        lineHeight: 32,
+        color: '#ffffff',
+        fontWeight: 500,
+    },
     list: {
         paddingVertical: 16,
         flex: 1,
@@ -89,6 +96,7 @@ const ThemeProvider: FC<PropsWithChildren> = (props) => {
                 iconButtonSize: defaultValue.iconButtonSize,
                 borderRadius: defaultValue.borderRadius,
                 shadow,
+                h1: defaultValue.h1,
                 list: defaultValue.list,
                 blurContainer: defaultValue.blurContainer,
             }}

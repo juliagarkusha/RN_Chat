@@ -9,6 +9,7 @@ const styles = (dateColor) => StyleSheet.create({
     },
     dateMd: {
         fontSize: 14,
+        lineHeight: 20
     },
 });
 

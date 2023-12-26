@@ -5,12 +5,14 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // Internal deps
 import ChatListScreen from "../../../../screens/Chats/ChatListScreen";
 import ChatScreen from "../../../../screens/Chats/ChatScreen/ChatScreen";
-import MeetingsListScreen from "../../../../screens/MeetingsListScreen/MeetingsListScreen";
-import Button from "../../../ui/Button";
+import MeetingsListScreen from "../../../../screens/Meetings/MeetingsListScreen";
+import Button from "../../../ui/Button/Button";
 import GoBackIcon from "../../../../assets/icons/GoBackIcon";
 import CloseIcon from "../../../../assets/icons/CloseIcon";
 import ChatName from "../../Chat/ChatName";
 import useChats from "../../../../hooks/useChats";
+import ContactsList from "../../Contacts/ContactsList";
+import ChannelsList from "../../Chat/ChannelsList";
 
 const ChatsStack: FC = () => {
     const ChatsStack = createNativeStackNavigator();
@@ -30,9 +32,12 @@ const ChatsStack: FC = () => {
                 component={ChatScreen}
                 options={({ navigation, route }) => ({
                     headerTitle: () => <ChatName name={getChatById(route.params.chatId).name} />,
-                    headerLeft: () => <Button viewType="icon" icon={<GoBackIcon />} onPress={() => navigation.goBack()}/>
+                    headerLeft: () => <Button viewType="icon" icon={<GoBackIcon />} onPress={() => navigation.goBack()}/>,
+                    presentation: "fullScreenModal",
                 })}
             />
+            <ChatsStack.Screen name="Contacts list screen" component={ContactsList} />
+            <ChatsStack.Screen name="Channels list screen" component={ChannelsList} />
             <ChatsStack.Screen
                 name="Meetings List"
                 component={MeetingsListScreen}

@@ -6,27 +6,31 @@ import { CONSTANTS } from "../../../../utils/constants";
 
 const styles = StyleSheet.create({
     header: {
-        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-end',
         margin: 16,
+        gap: CONSTANTS.GAP*2,
         width: Dimensions.get('window').width - CONSTANTS.GAP*2,
     },
     actions: {
         flexDirection: 'row',
-        justifyContent: 'flex-end',
-        gap: CONSTANTS.GAP/2,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: Dimensions.get('window').width - CONSTANTS.GAP*2,
     },
     textInput: {
-        width: Dimensions.get('window').width - CONSTANTS.GAP*3 - CONSTANTS.GAP/2 - 40*2,
+        width: Dimensions.get('window').width - CONSTANTS.GAP*2,
         borderWidth: 1,
-        borderColor: "#ccc",
+        borderColor: "#34394B",
+        backgroundColor: "#34394B",
         color: "#ffffff",
         borderRadius: 8,
         padding: 8,
-        marginRight: CONSTANTS.GAP,
         minHeight: 40
     },
+    search: {
+
+    }
 });
 
 export default styles;

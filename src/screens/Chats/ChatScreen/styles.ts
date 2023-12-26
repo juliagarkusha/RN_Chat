@@ -1,11 +1,17 @@
 import {
     StyleSheet,
+    Dimensions
 } from "react-native";
-import { CONSTANTS } from "../../../utils/constants";
 
-const styles = StyleSheet.create({
+const styles = (gap, keyboardHeight) => StyleSheet.create({
+    chatBody: {
+        marginTop: gap,
+        marginBottom: gap*1.25,
+        height: Dimensions.get('window').height - 150 - keyboardHeight,
+        justifyContent: "space-between"
+    },
     list: {
-        marginVertical: CONSTANTS.GAP,
+        height: Dimensions.get('window').height - 210 - keyboardHeight,
     },
 });
 

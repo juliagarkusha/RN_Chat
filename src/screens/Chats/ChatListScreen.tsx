@@ -10,11 +10,12 @@ import {
 
 // Internal deps
 import useChats from "../../hooks/useChats";
-import ChatItem from "../../components/common/Chat/ChatItem";
+import ChatCard from "../../components/common/Chat/ChatCard/ChatCard";
 import useTheme from "../../hooks/useTheme";
 import ChatHeader from "../../components/common/Chat/ChatHeader/ChatHeader";
 
-const ChatListScreen: FC = ({navigation}) => {
+const ChatListScreen: FC = ({ navigation }) => {
+    console.log('debug navigation ChatListScreen: ', navigation);
     const { colors } = useTheme()
     const refreshTimerRef = useRef<NodeJS.Timeout>();
     const [refreshing, setRefreshing] = useState<boolean>(false);
@@ -58,7 +59,7 @@ const ChatListScreen: FC = ({navigation}) => {
                 renderItem={({item}) => {
                     return (
                         <TouchableOpacity onPress={() => goToChat(item.id)}>
-                            <ChatItem
+                            <ChatCard
                                 key={item.id}
                                 id={item.id}
                                 name={item.name}
