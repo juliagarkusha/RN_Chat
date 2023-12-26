@@ -21,6 +21,7 @@ type ThemePropsType = {
     borderRadius: number;
     shadow: (width: number, height: number, radius: number , color: string, opacity: number) => ShadowType | {};
     list: {},
+    blurContainer: {}
 }
 
 const defaultValue: ThemePropsType = {
@@ -48,6 +49,18 @@ const defaultValue: ThemePropsType = {
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
     },
+    blurContainer: {
+        flex: 1,
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+        justifyContent: 'center',
+        overflow: 'hidden',
+        borderRadius: 20,
+        zIndex: 9999
+    }
 }
 
 export const ThemeContext = createContext<ThemePropsType>(defaultValue);
@@ -77,6 +90,7 @@ const ThemeProvider: FC<PropsWithChildren> = (props) => {
                 borderRadius: defaultValue.borderRadius,
                 shadow,
                 list: defaultValue.list,
+                blurContainer: defaultValue.blurContainer,
             }}
         >
             {children}
