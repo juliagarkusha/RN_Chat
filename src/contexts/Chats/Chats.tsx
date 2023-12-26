@@ -10,28 +10,17 @@ import React, {
 } from "react";
 
 // Internal deps
+import { ChatType, MessageType } from "../../types/Chat";
 import mockChatsData from "../../mocks/chats.json";
-
-type ChatType = {
-    id: string,
-    name: string,
-    isChannel: boolean,
-    isPrivate: boolean,
-    isMuted: boolean,
-    lastMessage: {
-        date: number,
-        body: string
-    },
-    unreadMessagesCount: number,
-    removed: boolean,
-    members: number[],
-}
+import mockMessagesData from "../../mocks/messages.json";
 
 type ChatsPropsType = {
     chatsData: ChatType[],
     searchValue: string,
     setSearchValue: Dispatch<SetStateAction<string>>,
-    onUpdateDataHandler: () => void
+    onUpdateDataHandler: () => void,
+    getChatById: (chatId: string) => ChatType | null,
+    getMessagesByChatId: (chatId: string) => MessageType[],
 }
 
 const defaultValue: ChatsPropsType = {
@@ -39,6 +28,8 @@ const defaultValue: ChatsPropsType = {
     searchValue: '',
     setSearchValue: () => void 0,
     onUpdateDataHandler: () => void 0,
+    getChatById: () => null,
+    getMessagesByChatId: () => [],
 }
 
 export const ChatsContext = createContext<ChatsPropsType>(defaultValue);
@@ -53,6 +44,20 @@ const ChatsProvider: FC<PropsWithChildren> = (props) => {
             chat.name.toLowerCase().includes(searchValue.toLowerCase())
         );
     }, [chatsData.length, searchValue]);
+
+    const getChatById = (chatId): ChatType => {
+        const foundChat = chatsData.find(chat => chat.id === chatId);
+
+        if (!foundChat) {
+            return null;
+        }
+
+        return foundChat;
+    }
+
+    const getMessagesByChatId = (chatId: string): MessageType[] => {
+        return mockMessagesData.filter(message => message.chatId === chatId);
+    }
 
     const onUpdateDataHandler = () => {
         setChatsData((prevValue) => {
@@ -82,7 +87,9 @@ const ChatsProvider: FC<PropsWithChildren> = (props) => {
                 chatsData: !!searchValue.length ? filteredChatsData : chatsData,
                 searchValue,
                 setSearchValue,
-                onUpdateDataHandler
+                onUpdateDataHandler,
+                getChatById,
+                getMessagesByChatId,
             }}
         >
             {children}

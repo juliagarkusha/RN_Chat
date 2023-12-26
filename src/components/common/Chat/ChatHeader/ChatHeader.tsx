@@ -1,10 +1,9 @@
 // External deps
 import React, { useState } from "react";
 import { View, TextInput } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 // Internal deps
-import Modal from "../../../ui/Modal";
-import MeetingsSlider from "../../Meeting/MeetingsSlider";
 import Button from "../../../ui/Button";
 import AddIcon from "../../../../assets/icons/AddIcon";
 import Search from "../../../../assets/icons/Search";
@@ -14,14 +13,10 @@ import useChats from "../../../../hooks/useChats";
 import styles from "./styles";
 
 const ChatHeader = () => {
-    const [ modalVisible, setModalVisible ] = useState(false);
     const [ searchVisible, setSearchVisible ] = useState(false);
 
     const { searchValue, setSearchValue } = useChats();
-
-    const onCloseModal = (): void => {
-        setModalVisible(false);
-    };
+    const navigation = useNavigation();
 
     return (
         <>
@@ -38,7 +33,7 @@ const ChatHeader = () => {
                     <Button
                         viewType="icon"
                         icon={<AddIcon />}
-                        onPress={() => setModalVisible(true)}
+                        onPress={() => navigation.navigate("Meetings List")}
                     />
                     <Button
                         viewType="icon"
@@ -47,12 +42,6 @@ const ChatHeader = () => {
                     />
                 </View>
             </View>
-            <Modal
-                isModalVisible={modalVisible}
-                closeModal={onCloseModal}
-            >
-                <MeetingsSlider />
-            </Modal>
         </>
 );
 };
