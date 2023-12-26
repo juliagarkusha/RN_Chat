@@ -3,18 +3,18 @@ import React, {FC, ReactElement} from "react";
 import { StyleSheet, View, Dimensions } from "react-native";
 
 // Internal deps
-import { CONSTANTS } from "../../../utils/constants";
-import membersData from "../../../mocks/members.json";
-import Card from "../../ui/Card";
-import Avatar from "../../ui/Avatar/Avatar";
-import LockIcon from "../../../assets/icons/LockIcon";
-import MessageCircleIcon from "../../../assets/icons/MessageCircleIcon";
-import Date from "../../ui/Date/Date";
-import Badge from "../../ui/Badge";
-import PreviewMessageBody from "../Message/PreviewMessageBody";
-import ChatName from "./ChatName";
+import { CONSTANTS } from "../../../../utils/constants";
+import membersData from "../../../../mocks/members.json";
+import Card from "../../../ui/Card";
+import Avatar from "../../../ui/Avatar/Avatar";
+import LockIcon from "../../../../assets/icons/LockIcon";
+import MessageCircleIcon from "../../../../assets/icons/MessageCircleIcon";
+import Date from "../../../ui/Date/Date";
+import Badge from "../../../ui/Badge";
+import PreviewMessageBody from "../../Message/PreviewMessageBody";
+import ChatName from "../ChatName";
 
-type ChatItemProps = {
+type ChatCardProps = {
     id: string,
     name: string,
     members: number[],
@@ -26,7 +26,7 @@ type ChatItemProps = {
     removed: boolean,
 }
 
-const ChatItem: FC<ChatItemProps> = (props): ReactElement => {
+const ChatCard: FC<ChatCardProps> = (props) => {
     const {
         id,
         name,
@@ -92,4 +92,4 @@ const ChatItem: FC<ChatItemProps> = (props): ReactElement => {
     )
 }
 
-export default ChatItem;
+export default ChatCard;

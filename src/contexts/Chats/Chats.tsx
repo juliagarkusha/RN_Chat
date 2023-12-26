@@ -16,6 +16,7 @@ import mockMessagesData from "../../mocks/messages.json";
 
 type ChatsPropsType = {
     chatsData: ChatType[],
+    channelsData: ChatType[],
     searchValue: string,
     setSearchValue: Dispatch<SetStateAction<string>>,
     onUpdateDataHandler: () => void,
@@ -25,7 +26,8 @@ type ChatsPropsType = {
 
 const defaultValue: ChatsPropsType = {
     chatsData: mockChatsData,
-    searchValue: '',
+    channelsData: mockChatsData,
+    searchValue: '11',
     setSearchValue: () => void 0,
     onUpdateDataHandler: () => void 0,
     getChatById: () => null,
@@ -85,6 +87,7 @@ const ChatsProvider: FC<PropsWithChildren> = (props) => {
         <ChatsContext.Provider
             value={{
                 chatsData: !!searchValue.length ? filteredChatsData : chatsData,
+                channelsData: chatsData.filter(item => item.isChannel),
                 searchValue,
                 setSearchValue,
                 onUpdateDataHandler,

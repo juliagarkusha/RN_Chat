@@ -6,7 +6,8 @@ import { CONSTANTS } from "../../../../utils/constants";
 const styles = StyleSheet.create({
     message: {
         marginHorizontal: CONSTANTS.GAP,
-        marginVertical: CONSTANTS.GAP/4,
+        marginTop: CONSTANTS.GAP/4,
+        marginBottom: CONSTANTS.GAP*0.75
     },
     row: {
         flexDirection: 'row',
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
     },
     info: {
         flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: 'baseline',
         gap: CONSTANTS.GAP/2,
     },
     text: {

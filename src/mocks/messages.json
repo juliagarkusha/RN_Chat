@@ -76,7 +76,138 @@
       "isOnline": false
     }
   },
-
+  {
+    "id": 29,
+    "chatId": 1701462120133,
+    "body": "Hello again!",
+    "date": 1703776485000,
+    "sender": {
+      "id": 1701630553224,
+      "name": "bob",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 30,
+    "chatId": 1701462120133,
+    "body": "Hi Bob! How's it going?",
+    "date": 1703827285000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+  {
+    "id": 31,
+    "chatId": 1701462120133,
+    "body": "I'm good, thanks! Just busy with work.",
+    "date": 1703878085000,
+    "sender": {
+      "id": 1701630538046,
+      "name": "alice",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 32,
+    "chatId": 1701462120133,
+    "body": "How about you, Kiri?",
+    "date": 1703928885000,
+    "sender": {
+      "id": 1701630553224,
+      "name": "bob",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 33,
+    "chatId": 1701462120133,
+    "body": "I'm doing well. Planning for the weekend.",
+    "date": 1703979685000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+  {
+    "id": 34,
+    "chatId": 1701462120133,
+    "body": "Nice! Any exciting plans?",
+    "date": 1704030485000,
+    "sender": {
+      "id": 1701630538046,
+      "name": "alice",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 35,
+    "chatId": 1701462120133,
+    "body": "Thinking of going hiking. How about you?",
+    "date": 1704081285000,
+    "sender": {
+      "id": 1701630553224,
+      "name": "bob",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 36,
+    "chatId": 1701462120133,
+    "body": "Sounds fun! I might catch up on some reading.",
+    "date": 1704132085000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+  {
+    "id": 37,
+    "chatId": 1701462120133,
+    "body": "Enjoy your weekend, Kiri!",
+    "date": 1704182885000,
+    "sender": {
+      "id": 1701630538046,
+      "name": "alice",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 38,
+    "chatId": 1701462120133,
+    "body": "You too, Alice!",
+    "date": 1704233685000,
+    "sender": {
+      "id": 1701630563273,
+      "name": "kiri",
+      "isOnline": false
+    }
+  },
+  {
+    "id": 39,
+    "chatId": 1701462120133,
+    "body": "Let's catch up next week!",
+    "date": 1704284485000,
+    "sender": {
+      "id": 1701630553224,
+      "name": "bob",
+      "isOnline": true
+    }
+  },
+  {
+    "id": 40,
+    "chatId": 1701462120133,
+    "body": "Sure! Have a great weekend, everyone!",
+    "date": 1704335285000,
+    "sender": {
+      "id": 1701630538046,
+      "name": "alice",
+      "isOnline": true
+    }
+  },
   {
     "id": 4,
     "chatId": 1201466720534,

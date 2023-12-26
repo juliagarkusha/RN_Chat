@@ -12,11 +12,8 @@ import VideoIcon from "../../../../assets/icons/VideoIcon";
 import PeopleIcon from "../../../../assets/icons/PeopleIcon";
 import MoreIcon from "../../../../assets/icons/MoreIcon";
 import useTheme from "../../../../hooks/useTheme";
-import ChatName from "../../Chat/ChatName";
-import Button from "../../../ui/Button/Button";
-import GoBackIcon from "../../../../assets/icons/GoBackIcon";
 
-const TabsNavigator: FC = () => {
+const ContactsTabsNavigator: FC = () => {
     const Tabs = createBottomTabNavigator();
     const { colors } = useTheme();
 
@@ -41,18 +38,8 @@ const TabsNavigator: FC = () => {
                 options={{ tabBarIcon: VideoIcon }}
                 component={MeetingsStack}
             />
-            <Tabs.Screen
-                name="Contacts"
-                options={{ tabBarIcon: PeopleIcon }}
-                component={ContactsStack}
-            />
-            <Tabs.Screen
-                name="Settings"
-                options={{ tabBarIcon: MoreIcon }}
-                component={SettingsStack}
-            />
         </Tabs.Navigator>
     )
 }
 
-export default TabsNavigator;
+export default ContactsTabsNavigator;

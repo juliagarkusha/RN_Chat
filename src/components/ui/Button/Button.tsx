@@ -8,12 +8,13 @@ import {
 } from "react-native";
 
 // Internal deps
-import useTheme from "../../hooks/useTheme";
+import useTheme from "../../../hooks/useTheme";
 
 type ButtonProps = {
     text?: string,
-    icon: ReactNode,
-    viewType: 'icon' | 'primary',
+    icon?: ReactNode,
+    viewType?: 'icon' | 'primary' | 'secondary',
+    buttonStyles?: {},
     onPress?: () => void,
 }
 
@@ -22,6 +23,7 @@ const Button: FC<ButtonProps> = (props) => {
         icon,
         text = '',
         viewType = 'primary',
+        buttonStyles,
         onPress = () => {},
     } = props;
 
@@ -38,7 +40,7 @@ const Button: FC<ButtonProps> = (props) => {
         }
 
         return {
-            backgroundColor: colors.blue300,
+            backgroundColor: viewType === 'secondary' ? colors.blue600 : colors.blue300,
             justifyContent: 'center',
             alignItems: 'center',
             width: 65,
@@ -57,6 +59,7 @@ const Button: FC<ButtonProps> = (props) => {
                       height: iconButtonSize,
                       borderRadius: borderRadius,
                   },
+                  buttonStyles,
               ]}>
               {viewType === 'icon' ? icon : <Text style={{ color: colors.white }}>{text}</Text> }
           </Pressable>
