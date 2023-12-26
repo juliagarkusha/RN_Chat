@@ -33,10 +33,16 @@ const Button: FC<ButtonProps> = (props) => {
                 backgroundColor: colors.blue600,
                 justifyContent: 'center',
                 alignItems: 'center',
+                width: iconButtonSize,
             };
         }
 
-        return { backgroundColor: 'red' };
+        return {
+            backgroundColor: colors.blue300,
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: 65,
+        };
     };
 
     return (
@@ -48,12 +54,11 @@ const Button: FC<ButtonProps> = (props) => {
                   getButtonStyles(),
                   {
                       opacity: pressed ? 0.8 : 1,
-                      width: iconButtonSize,
                       height: iconButtonSize,
                       borderRadius: borderRadius,
                   },
               ]}>
-              {viewType === 'icon' ? icon : <Text>{text}</Text> }
+              {viewType === 'icon' ? icon : <Text style={{ color: colors.white }}>{text}</Text> }
           </Pressable>
       </SafeAreaView>
     )

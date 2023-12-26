@@ -4,6 +4,7 @@ import { View, TextInput } from "react-native";
 
 // Internal deps
 import Modal from "../../../ui/Modal";
+import MeetingsSlider from "../../Meeting/MeetingsSlider";
 import Button from "../../../ui/Button";
 import AddIcon from "../../../../assets/icons/AddIcon";
 import Search from "../../../../assets/icons/Search";
@@ -49,7 +50,9 @@ const ChatHeader = () => {
             <Modal
                 isModalVisible={modalVisible}
                 closeModal={onCloseModal}
-            />
+            >
+                <MeetingsSlider />
+            </Modal>
         </>
 );
 };
