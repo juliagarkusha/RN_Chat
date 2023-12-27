@@ -5,10 +5,7 @@
     "isChannel": true,
     "isPrivate": true,
     "isMuted": false,
-    "lastMessage": {
-      "date": 1701462120133,
-      "body": "11"
-    },
+    "lastMessage": {},
     "unreadMessagesCount": 0,
     "removed": false,
     "members": [1701630538046, 1701630553224, 1701630563273, 1701330503359]

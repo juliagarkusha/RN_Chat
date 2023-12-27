@@ -82,8 +82,8 @@ const ChatCard: FC<ChatCardProps> = (props) => {
                     <Date date={lastMessageDate} />
                 </View>
                 <View style={[styles.dateRow, styles.row]}>
-                    <PreviewMessageBody message={lastMessageBody} />
-                    {!!unreadMessagesCount && (
+                    <PreviewMessageBody message={!!lastMessageBody ? lastMessageBody : 'No messages'} />
+                    {!!unreadMessagesCount && !!lastMessageBody && (
                         <Badge text={String(unreadMessagesCount)} />
                     )}
                 </View>
