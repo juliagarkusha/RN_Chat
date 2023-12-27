@@ -25,7 +25,7 @@ const ChatHeader = () => {
                     <Button
                         viewType="icon"
                         icon={<AddIcon />}
-                        onPress={() => navigation.navigate("Meetings List")}
+                        onPress={() => navigation.navigate("Create chat")}
                     />
                 </View>
                 <View style={styles.search}>

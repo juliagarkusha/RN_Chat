@@ -13,7 +13,7 @@ import useTheme from "../../../hooks/useTheme";
 type ButtonProps = {
     text?: string,
     icon?: ReactNode,
-    viewType?: 'icon' | 'primary' | 'secondary',
+    viewType?: 'icon' | 'primary' | 'secondary' | 'link',
     buttonStyles?: {},
     onPress?: () => void,
 }
@@ -29,10 +29,22 @@ const Button: FC<ButtonProps> = (props) => {
 
     const { colors, iconButtonSize, borderRadius } = useTheme();
 
+    const getBgByViewType = () => {
+        switch (viewType) {
+            case 'secondary':
+                return colors.blue600;
+            case 'icon':
+                return colors.blue600;
+            case 'link':
+                return colors.blue900;
+            default:
+                return colors.blue300;
+        }
+    };
+
     const getButtonStyles = (): ViewStyle => {
         if (viewType === 'icon') {
             return {
-                backgroundColor: colors.blue600,
                 justifyContent: 'center',
                 alignItems: 'center',
                 width: iconButtonSize,
@@ -40,7 +52,6 @@ const Button: FC<ButtonProps> = (props) => {
         }
 
         return {
-            backgroundColor: viewType === 'secondary' ? colors.blue600 : colors.blue300,
             justifyContent: 'center',
             alignItems: 'center',
             width: 65,
@@ -58,10 +69,11 @@ const Button: FC<ButtonProps> = (props) => {
                       opacity: pressed ? 0.8 : 1,
                       height: iconButtonSize,
                       borderRadius: borderRadius,
+                      backgroundColor: getBgByViewType(),
                   },
                   buttonStyles,
               ]}>
-              {viewType === 'icon' ? icon : <Text style={{ color: colors.white }}>{text}</Text> }
+              {viewType === 'icon' ? icon : <Text style={{ color: viewType === 'link' ? colors.blue300 : colors.white }}>{text}</Text> }
           </Pressable>
       </SafeAreaView>
     )

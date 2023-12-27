@@ -14,9 +14,6 @@ import { useNavigation } from "@react-navigation/native";
 import ContactItem from "./ContactItem/ContactItem";
 import mockMembers from "../../../mocks/members.json";
 
-// Local deps
-import styles from "./"
-
 const ContactsList: FC = () => {
     const navigation = useNavigation();
     const { colors } = useTheme()
@@ -43,7 +40,7 @@ const ContactsList: FC = () => {
                     return (
                         <TouchableOpacity onPress={() => goToContact(item.id)}>
                             <ContactItem
-                                key={item.id}
+                                key={item.id}x
                                 id={item.id}
                                 name={item.name}
                                 isOnline={item.isOnline}
