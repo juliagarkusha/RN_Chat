@@ -13,7 +13,7 @@ type ModalProps = {
     isModalVisible: boolean;
     isCloseButton?: boolean;
     title?: string;
-    closeModal: () => void;
+    closeModal?: () => void;
     children: ReactNode
 };
 
@@ -38,7 +38,6 @@ const Modal: FC<ModalProps> = (props) => {
             flex: 1,
             justifyContent: 'flex-end',
             alignItems: 'center',
-            marginTop: 22,
             backgroundColor: "rgba(27, 32, 46, .5)",
             borderTopRightRadius: 22,
             borderTopLeftRadius: 22,

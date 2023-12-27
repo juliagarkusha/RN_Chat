@@ -1,25 +1,31 @@
 // External deps
-import React, {FC, useRef, useState} from "react";
+import React, { FC, useRef, useState } from "react";
 import {
     FlatList,
     RefreshControl,
     SafeAreaView,
-    StyleSheet,
     TouchableOpacity,
 } from "react-native";
 
 // Internal deps
-import useChats from "../../hooks/useChats";
-import ChatCard from "../../components/common/Chat/ChatCard/ChatCard";
-import useTheme from "../../hooks/useTheme";
-import ChatHeader from "../../components/common/Chat/ChatHeader/ChatHeader";
+import useChats from "../../../hooks/useChats";
+import ChatCard from "../../../components/common/Chat/ChatCard/ChatCard";
+import useTheme from "../../../hooks/useTheme";
+import ChatHeader from "../../../components/common/Chat/ChatHeader/ChatHeader";
+import chatsStore from "../../../store/Chats";
+import Modal from "../../../components/ui/Modal";
+import Button from "../../../components/ui/Button/Button";
 
-const ChatListScreen: FC = ({ navigation }) => {
-    console.log('debug navigation ChatListScreen: ', navigation);
-    const { colors } = useTheme()
+// Local deps
+import style from "./styles";
+
+const ChatListScreen: FC = ({navigation}) => {
+    const { colors, gap } = useTheme()
     const refreshTimerRef = useRef<NodeJS.Timeout>();
     const [refreshing, setRefreshing] = useState<boolean>(false);
-    const { chatsData, onUpdateDataHandler } = useChats();
+    const [ deleteChatId, setDeleteChatId ] = useState('');
+    const [ modalVisible, setModalVisible ] = useState(false);
+    const { onUpdateDataHandler } = useChats();
 
     const onRefreshHandler = () => {
         clearTimeout(refreshTimerRef.current);
@@ -30,19 +36,23 @@ const ChatListScreen: FC = ({ navigation }) => {
         }, 3000);
     }
 
-    const styles = StyleSheet.create({
-        list: {
-            paddingVertical: 16,
-            flex: 1,
-            backgroundColor: colors.blue900,
-            alignItems: 'flex-start',
-            justifyContent: 'flex-start',
-        },
-    });
+    const styles = style(gap, colors.blue900);
 
     const goToChat = (id: string) => {
-        navigation.navigate("Chat", {chatId: id});
+        chatsStore.setCurrentChatId(id);
+        navigation.navigate("Chat");
     }
+
+    const onShowDeleteModal = (id): void => {
+        setModalVisible(true);
+        setDeleteChatId(id);
+    }
+
+    const onDeleteCHat = (): void => {
+        setModalVisible(false);
+        chatsStore.deleteChatById(deleteChatId);
+        setDeleteChatId('');
+    };
 
     return (
         <SafeAreaView style={styles.list}>
@@ -55,10 +65,13 @@ const ChatListScreen: FC = ({ navigation }) => {
                         tintColor={colors.white}
                     />
                 )}
-                data={chatsData}
+                data={chatsStore.chats}
                 renderItem={({item}) => {
                     return (
-                        <TouchableOpacity onPress={() => goToChat(item.id)}>
+                        <TouchableOpacity
+                            onPress={() => goToChat(item.id)}
+                            onLongPress={() => onShowDeleteModal(item.id)}
+                        >
                             <ChatCard
                                 key={item.id}
                                 id={item.id}
@@ -76,6 +89,17 @@ const ChatListScreen: FC = ({ navigation }) => {
                     )
                 }}
             />
+            <Modal
+                isModalVisible={modalVisible}
+                closeModal={() => setModalVisible(false)}
+            >
+                <Button
+                    text="Delete chat"
+                    viewType='secondary'
+                    onPress={onDeleteCHat}
+                    buttonStyles={styles.modalButton}
+                />
+            < /Modal>
         </SafeAreaView>
     )
 }

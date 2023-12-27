@@ -1,10 +1,7 @@
 // External deps
-import React, {FC, JSX, ReactNode, useState} from "react";
+import React, {FC, useState} from "react";
 import {
-    SafeAreaView,
-    Pressable,
-    Text,
-    ViewStyle, View,
+    View,
 } from "react-native";
 
 // Internal deps

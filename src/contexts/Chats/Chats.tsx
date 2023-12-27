@@ -10,9 +10,8 @@ import React, {
 } from "react";
 
 // Internal deps
-import { ChatType, MessageType } from "../../types/Chat";
+import { ChatType } from "../../types/Chat";
 import mockChatsData from "../../mocks/chats.json";
-import mockMessagesData from "../../mocks/messages.json";
 
 type ChatsPropsType = {
     chatsData: ChatType[],
@@ -21,7 +20,6 @@ type ChatsPropsType = {
     setSearchValue: Dispatch<SetStateAction<string>>,
     onUpdateDataHandler: () => void,
     getChatById: (chatId: string) => ChatType | null,
-    getMessagesByChatId: (chatId: string) => MessageType[],
 }
 
 const defaultValue: ChatsPropsType = {
@@ -31,7 +29,6 @@ const defaultValue: ChatsPropsType = {
     setSearchValue: () => void 0,
     onUpdateDataHandler: () => void 0,
     getChatById: () => null,
-    getMessagesByChatId: () => [],
 }
 
 export const ChatsContext = createContext<ChatsPropsType>(defaultValue);
@@ -55,10 +52,6 @@ const ChatsProvider: FC<PropsWithChildren> = (props) => {
         }
 
         return foundChat;
-    }
-
-    const getMessagesByChatId = (chatId: string): MessageType[] => {
-        return mockMessagesData.filter(message => message.chatId === chatId);
     }
 
     const onUpdateDataHandler = () => {
@@ -92,7 +85,6 @@ const ChatsProvider: FC<PropsWithChildren> = (props) => {
                 setSearchValue,
                 onUpdateDataHandler,
                 getChatById,
-                getMessagesByChatId,
             }}
         >
             {children}
