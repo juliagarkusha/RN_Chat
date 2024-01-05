@@ -1,23 +1,23 @@
 // External deps
-import React, {FC, useRef, useState} from "react";
+import React, { FC } from "react";
 import {
     FlatList,
-    RefreshControl,
     SafeAreaView,
     StyleSheet,
     TouchableOpacity,
 } from "react-native";
+import { observer } from "mobx-react";
 
 // Internal deps
-import useChats from "../../../hooks/useChats";
 import ChatItem from "./ChatItem/ChatItem";
 import useTheme from "../../../hooks/useTheme";
 import { useNavigation } from "@react-navigation/native";
+import chatsStore from "../../../store/Chats";
 
 const ChannelsList: FC = () => {
     const navigation = useNavigation();
     const { colors } = useTheme()
-    const { channelsData } = useChats();
+    const channels = chatsStore.chats.filter(item => item.isChannel);
 
     const styles = StyleSheet.create({
         list: {
@@ -29,17 +29,17 @@ const ChannelsList: FC = () => {
         },
     });
 
-    const goToChat = (id: string) => {
-        navigation.navigate("Chat", { chatId: id });
+    const goToChat = () => {
+        navigation.navigate("Chat");
     }
 
     return (
         <SafeAreaView style={styles.list}>
             <FlatList
-                data={channelsData}
+                data={channels}
                 renderItem={({item}) => {
                     return (
-                        <TouchableOpacity onPress={() => goToChat(item.id)}>
+                        <TouchableOpacity onPress={() => goToChat()}>
                             <ChatItem
                                 key={item.id}
                                 id={item.id}
@@ -54,4 +54,4 @@ const ChannelsList: FC = () => {
     )
 }
 
-export default ChannelsList;
+export default observer(ChannelsList);

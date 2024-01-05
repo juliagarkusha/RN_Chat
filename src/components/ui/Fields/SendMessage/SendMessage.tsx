@@ -1,26 +1,23 @@
 // External deps
-import React, { FC, Dispatch, SetStateAction } from "react";
-import {TextInput, TouchableOpacity, View} from "react-native";
+import React, { FC } from "react";
+import {TextInput, View} from "react-native";
+import { observer } from "mobx-react";
 
 // Internal deps
 import useTheme from "../../../../hooks/useTheme";
 import SendIcon from "../../../../assets/icons/SendIcon";
 import Button from "../../Button/Button";
+import messagesStore from "../../../../store/Messages";
+import chatsStore from "../../../../store/Chats";
 
 // Local deps
 import styles from "./styles";
 
 type SendMessageProps = {
-    message: string,
-    setMessage: Dispatch<SetStateAction<string>>,
+    chatId: number,
 }
 
-const SendMessage: FC<SendMessageProps> = (props) => {
-    const {
-        message,
-        setMessage,
-    } = props;
-
+const SendMessage: FC<SendMessageProps> = () => {
     const { colors, iconButtonSize, gap} = useTheme();
 
     const style = styles(gap, iconButtonSize, colors.blue600, colors.white);
@@ -30,20 +27,23 @@ const SendMessage: FC<SendMessageProps> = (props) => {
             <TextInput
                 style={style.field}
                 placeholder="Enter your message"
-                onChangeText={setMessage}
-                value={message}
+                onChangeText={(text) => messagesStore.setSendMessageBody(text)}
+                value={messagesStore.sendMessageBody}
                 placeholderTextColor={colors.gray600}
             />
             {
-                !!message.length && (
+                !!messagesStore.sendMessageBody.length && (
                     <Button
                         viewType="icon"
                         icon={<SendIcon />}
                         buttonStyles={style.sendButton}
+                        onPress={() => {
+                            messagesStore.sendMessage(chatsStore.currentChatId)
+                        }}
                     />
                 )}
         </View>
     )
 }
 
-export default SendMessage;
+export default observer(SendMessage);

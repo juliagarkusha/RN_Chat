@@ -1,6 +1,7 @@
 // External deps
 import React, { FC } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { observer } from "mobx-react";
 
 // Internal deps
 import ChatsStack from "../Stacks/ChatsStack";
@@ -12,9 +13,7 @@ import VideoIcon from "../../../../assets/icons/VideoIcon";
 import PeopleIcon from "../../../../assets/icons/PeopleIcon";
 import MoreIcon from "../../../../assets/icons/MoreIcon";
 import useTheme from "../../../../hooks/useTheme";
-import ChatName from "../../Chat/ChatName";
-import Button from "../../../ui/Button/Button";
-import GoBackIcon from "../../../../assets/icons/GoBackIcon";
+import chatsStore from "../../../../store/Chats";
 
 const TabsNavigator: FC = () => {
     const Tabs = createBottomTabNavigator();
@@ -32,8 +31,11 @@ const TabsNavigator: FC = () => {
         >
             <Tabs.Screen
                 name="Chats"
-                options={{ tabBarIcon: ChatIcon }}
-                tabBarActiveTintColor={{ color: "red" }}
+                options={{
+                    tabBarIcon: ChatIcon,
+                    tabBarBadge: chatsStore.chats.length,
+                    tabBarBadgeStyle: { backgroundColor: colors.blue900, color: colors.white, borderColor: colors.white }
+                }}
                 component={ChatsStack}
             />
             <Tabs.Screen
@@ -55,4 +57,4 @@ const TabsNavigator: FC = () => {
     )
 }
 
-export default TabsNavigator;
+export default observer(TabsNavigator);

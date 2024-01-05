@@ -4,7 +4,7 @@ import {
 } from "react-native";
 import {CONSTANTS} from "../../../utils/constants";
 
-const styles = (gap, textColor, check1Bg, check2Bg) => StyleSheet.create({
+const styles = (gap, textColor, check1Bg) => StyleSheet.create({
     container: {
         marginTop: gap*2,
     },
@@ -53,9 +53,6 @@ const styles = (gap, textColor, check1Bg, check2Bg) => StyleSheet.create({
     },
     checkPrivateBg: {
         backgroundColor: check1Bg,
-    },
-    checkPublicBg: {
-        backgroundColor: check2Bg,
     },
     checkboxLabel: {
         fontSize: 16,
