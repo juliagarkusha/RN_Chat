@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     headerRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         width: Dimensions.get('window').width - CONSTANTS.GAP*2,
     }
 });
