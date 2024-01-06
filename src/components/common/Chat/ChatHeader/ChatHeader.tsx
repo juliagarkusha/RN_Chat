@@ -20,36 +20,34 @@ const ChatHeader = () => {
     const navigation = useNavigation();
 
     return (
-        <>
-            <View style={styles.header}>
-                <View style={styles.headerRow}>
-                    <Text style={h1}>Chat</Text>
-                    <View style={styles.actions}>
-                        <Button
-                            viewType="icon"
-                            icon={<SearchIcon />}
-                            onPress={() => setSearchVisible(!searchVisible)}
-                        />
-                        <Button
-                            viewType="icon"
-                            icon={<AddIcon />}
-                            onPress={() => navigation.navigate("Create chat")}
-                        />
-                    </View>
+        <View style={styles.header}>
+            <View style={styles.headerRow}>
+                <Text style={h1}>Chat</Text>
+                <View style={styles.actions}>
+                    <Button
+                        viewType="icon"
+                        icon={<SearchIcon />}
+                        onPress={() => setSearchVisible(!searchVisible)}
+                    />
+                    <Button
+                        viewType="icon"
+                        icon={<AddIcon />}
+                        onPress={() => navigation.navigate("Create chat")}
+                    />
                 </View>
-                { searchVisible &&
-                    <View style={styles.search}>
-                        <TextInput
-                            style={styles.textInput}
-                            placeholder="Search"
-                            onChangeText={setSearchValue}
-                            value={searchValue}
-                            placeholderTextColor={colors.gray600}
-                        />
-                    </View>
-                }
             </View>
-        </>
+            { searchVisible &&
+              <View style={styles.search}>
+                <TextInput
+                  style={styles.textInput}
+                  placeholder="Search"
+                  onChangeText={setSearchValue}
+                  value={searchValue}
+                  placeholderTextColor={colors.gray600}
+                />
+              </View>
+            }
+        </View>
 );
 };
 
