@@ -14,9 +14,8 @@ const styles = StyleSheet.create({
     },
     actions: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
-        width: Dimensions.get('window').width - CONSTANTS.GAP*2,
+        gap: CONSTANTS.GAP/2,
     },
     textInput: {
         width: Dimensions.get('window').width - CONSTANTS.GAP*2,
@@ -28,8 +27,10 @@ const styles = StyleSheet.create({
         padding: 8,
         minHeight: 40
     },
-    search: {
-
+    headerRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: Dimensions.get('window').width - CONSTANTS.GAP*2,
     }
 });
 
