@@ -23,7 +23,7 @@ import style from "./styles";
 
 const ChatListScreen: FC = ({navigation}) => {
     const scrollListY = useSharedValue(0);
-    const headerHeight = useSharedValue(72);
+    const headerHeight = useSharedValue(70);
     const { colors, gap } = useTheme()
     const refreshTimerRef = useRef<NodeJS.Timeout>();
     const [refreshing, setRefreshing] = useState<boolean>(false);
@@ -35,8 +35,8 @@ const ChatListScreen: FC = ({navigation}) => {
 
     const animatedHeaderStyle = useAnimatedStyle(() => {
         return {
-            opacity: interpolate(scrollListY.value, [0, 66], [1, 0], Extrapolation.CLAMP),
-            height: interpolate(scrollListY.value, [50, 116], [headerHeight.value, 0], Extrapolation.CLAMP),
+            opacity: interpolate(scrollListY.value, [0, 70], [1, 0], Extrapolation.CLAMP),
+            height: interpolate(scrollListY.value, [50, 120], [headerHeight.value, 0], Extrapolation.CLAMP),
         }
     })
 
