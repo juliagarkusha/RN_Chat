@@ -1,11 +1,13 @@
 // External deps
-import React, { FC, useRef, useState } from "react";
-import {
-    FlatList,
-    RefreshControl,
-    SafeAreaView,
-    TouchableOpacity,
-} from "react-native";
+import React, {FC, useRef, useState} from "react";
+import {RefreshControl, SafeAreaView, TouchableOpacity,} from "react-native";
+import Animated, {
+    Extrapolation,
+    interpolate,
+    useAnimatedScrollHandler,
+    useAnimatedStyle,
+    useSharedValue,
+} from "react-native-reanimated";
 
 // Internal deps
 import useChats from "../../../hooks/useChats";
@@ -20,12 +22,27 @@ import Button from "../../../components/ui/Button/Button";
 import style from "./styles";
 
 const ChatListScreen: FC = ({navigation}) => {
+    const scrollListY = useSharedValue(0);
+    const headerHeight = useSharedValue(72);
     const { colors, gap } = useTheme()
     const refreshTimerRef = useRef<NodeJS.Timeout>();
     const [refreshing, setRefreshing] = useState<boolean>(false);
     const [ deleteChatId, setDeleteChatId ] = useState('');
     const [ modalVisible, setModalVisible ] = useState(false);
     const { onUpdateDataHandler } = useChats();
+
+    const styles = style(gap, colors.blue900);
+
+    const animatedHeaderStyle = useAnimatedStyle(() => {
+        return {
+            opacity: interpolate(scrollListY.value, [0, 66], [1, 0], Extrapolation.CLAMP),
+            height: interpolate(scrollListY.value, [50, 116], [headerHeight.value, 0], Extrapolation.CLAMP),
+        }
+    })
+
+    const onScrollListHandler = useAnimatedScrollHandler(event => {
+        scrollListY.value = event.contentOffset.y;
+    })
 
     const onRefreshHandler = () => {
         clearTimeout(refreshTimerRef.current);
@@ -35,8 +52,6 @@ const ChatListScreen: FC = ({navigation}) => {
             onUpdateDataHandler()
         }, 3000);
     }
-
-    const styles = style(gap, colors.blue900);
 
     const goToChat = (id: string) => {
         chatsStore.setCurrentChatId(id);
@@ -56,8 +71,10 @@ const ChatListScreen: FC = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.list}>
-            <ChatHeader />
-            <FlatList
+            <Animated.View style={animatedHeaderStyle}>
+                <ChatHeader />
+            </Animated.View>
+            <Animated.FlatList
                 refreshControl={(
                     <RefreshControl
                         onRefresh={onRefreshHandler}
@@ -88,6 +105,7 @@ const ChatListScreen: FC = ({navigation}) => {
                         </TouchableOpacity>
                     )
                 }}
+                onScroll={onScrollListHandler}
             />
             <Modal
                 isModalVisible={modalVisible}
