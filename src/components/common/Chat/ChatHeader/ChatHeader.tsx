@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import {View, TextInput, Text} from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import Animated, { StretchInX, FadeOut } from "react-native-reanimated";
 
 // Internal deps
 import Button from "../../../ui/Button/Button";
@@ -15,27 +16,29 @@ import styles from "./styles";
 
 const ChatHeader = () => {
     const { searchValue, setSearchValue } = useChats();
-    const [ searchVisible, setSearchVisible ] = useState(false);
-    const { h1, colors } = useTheme();
+    const [ isSearchVisible, setIsSearchVisible ] = useState(false);
+    const { colors } = useTheme();
     const navigation = useNavigation();
 
     return (
         <View style={styles.header}>
             <View style={styles.headerRow}>
-                { searchVisible &&
-                  <TextInput
-                    style={styles.textInput}
-                    placeholder="Search"
-                    onChangeText={setSearchValue}
-                    value={searchValue}
-                    placeholderTextColor={colors.gray600}
-                  />
+                { isSearchVisible &&
+                  <Animated.View entering={StretchInX} exiting={FadeOut}>
+                    <TextInput
+                      style={styles.textInput}
+                      placeholder="Search"
+                      onChangeText={setSearchValue}
+                      value={searchValue}
+                      placeholderTextColor={colors.gray600}
+                    />
+                  </Animated.View>
                 }
                 <View style={styles.actions}>
                     <Button
                         viewType="icon"
                         icon={<SearchIcon />}
-                        onPress={() => setSearchVisible(!searchVisible)}
+                        onPress={() => setIsSearchVisible(!isSearchVisible)}
                     />
                     <Button
                         viewType="icon"
@@ -45,7 +48,7 @@ const ChatHeader = () => {
                 </View>
             </View>
         </View>
-);
+    );
 };
 
 export default ChatHeader;
