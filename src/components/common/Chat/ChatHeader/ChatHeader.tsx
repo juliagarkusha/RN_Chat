@@ -22,7 +22,15 @@ const ChatHeader = () => {
     return (
         <View style={styles.header}>
             <View style={styles.headerRow}>
-                <Text style={h1}>Chat</Text>
+                { searchVisible &&
+                  <TextInput
+                    style={styles.textInput}
+                    placeholder="Search"
+                    onChangeText={setSearchValue}
+                    value={searchValue}
+                    placeholderTextColor={colors.gray600}
+                  />
+                }
                 <View style={styles.actions}>
                     <Button
                         viewType="icon"
@@ -36,17 +44,6 @@ const ChatHeader = () => {
                     />
                 </View>
             </View>
-            { searchVisible &&
-              <View style={styles.search}>
-                <TextInput
-                  style={styles.textInput}
-                  placeholder="Search"
-                  onChangeText={setSearchValue}
-                  value={searchValue}
-                  placeholderTextColor={colors.gray600}
-                />
-              </View>
-            }
         </View>
 );
 };
