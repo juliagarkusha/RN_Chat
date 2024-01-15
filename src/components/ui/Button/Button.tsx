@@ -13,9 +13,11 @@ import useTheme from "../../../hooks/useTheme";
 type ButtonProps = {
     text?: string,
     icon?: ReactNode,
-    viewType?: 'icon' | 'primary' | 'secondary' | 'link',
+    viewType?: 'icon' | 'primary' | 'secondary' | 'error' | 'link' | 'nav',
     buttonStyles?: {},
     onPress?: () => void,
+    children?: ReactNode,
+    isDisabled?: boolean,
 }
 
 const Button: FC<ButtonProps> = (props) => {
@@ -25,6 +27,8 @@ const Button: FC<ButtonProps> = (props) => {
         viewType = 'primary',
         buttonStyles,
         onPress = () => {},
+        children,
+        isDisabled = false
     } = props;
 
     const { colors, iconButtonSize, borderRadius } = useTheme();
@@ -37,8 +41,19 @@ const Button: FC<ButtonProps> = (props) => {
                 return colors.blue600;
             case 'link':
                 return colors.blue900;
+            case 'error':
+                return colors.red400;
             default:
-                return colors.blue300;
+                return !isDisabled ? colors.blue300 : colors.blue200;
+        }
+    };
+
+    const getColorByViewType = () => {
+        switch (viewType) {
+            case 'error':
+                return colors.red500;
+            default:
+                return !isDisabled ? colors.white : colors.white200;
         }
     };
 
@@ -58,10 +73,22 @@ const Button: FC<ButtonProps> = (props) => {
         };
     };
 
+    const getButtonContent = () => {
+        switch (viewType) {
+            case 'icon':
+                return icon;
+            case 'nav':
+                return children;
+            case 'link':
+            default:
+                return <Text style={{ color: getColorByViewType() }}>{text}</Text>;
+        }
+    }
+
     return (
       <SafeAreaView>
           <Pressable
-              onPress={onPress}
+              onPress={!isDisabled ? onPress : () => {}}
               android_ripple={{ color: colors.blue800, borderless: false }}
               style={({pressed}) => [
                   getButtonStyles(),
@@ -73,7 +100,7 @@ const Button: FC<ButtonProps> = (props) => {
                   },
                   buttonStyles,
               ]}>
-              {viewType === 'icon' ? icon : <Text style={{ color: viewType === 'link' ? colors.blue300 : colors.white }}>{text}</Text> }
+              {getButtonContent()}
           </Pressable>
       </SafeAreaView>
     )
