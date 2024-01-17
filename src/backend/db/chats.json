@@ -1,0 +1,153 @@
+[
+    {
+        "id": "1701462120133",
+        "name": "Private channel example",
+        "isChannel": true,
+        "isPrivate": true,
+        "isMuted": false,
+        "lastMessage": {},
+        "unreadMessagesCount": 0,
+        "removed": false,
+        "members": ["1701630553224", "1701630563273", "1701330503359"]
+    },
+    {
+        "id": "1201466720534",
+        "name": "Public channel example1111111111111111",
+        "isChannel": true,
+        "isPrivate": false,
+        "isMuted": false,
+        "lastMessage": {
+            "date": 1698962350000,
+            "body": "22"
+        },
+        "unreadMessagesCount": 5,
+        "removed": false,
+        "members": ["1701630538046", "1701630563273", "1701330503359"]
+    },
+    {
+        "id": "3901463446979",
+        "name": "React Native",
+        "isChannel": true,
+        "isPrivate": true,
+        "isMuted": false,
+        "lastMessage": {
+            "date": 1701626350000,
+            "body": "React Native"
+        },
+        "unreadMessagesCount": 20,
+        "removed": false,
+        "members": ["1701630563273", "1701330503359"]
+    },
+    {
+        "id": "3701462120170",
+        "name": "Alice",
+        "isChannel": false,
+        "isPrivate": true,
+        "isMuted": false,
+        "lastMessage": {
+            "date": 1699970350000,
+            "body": "33333333333"
+        },
+        "unreadMessagesCount": 1,
+        "removed": false,
+        "members": ["1701630538046", "1701330503359"]
+    },
+    {
+        "id": "5701464520273",
+        "name": "Dev",
+        "isChannel": true,
+        "isPrivate": true,
+        "isMuted": false,
+        "lastMessage": {
+            "date": 1700920750000,
+            "body": "qqwwqwqwqqwwwqwqwwqwqqwqwwqwqwqwq"
+        },
+        "unreadMessagesCount": 0,
+        "removed": false,
+        "members": ["1701630538046", "1701630553224", "1701330503359"]
+    },
+    {
+        "id": "4901462120111",
+        "name": "React",
+        "isChannel": true,
+        "isPrivate": true,
+        "isMuted": false,
+        "lastMessage": {
+            "date": 1701331150000,
+            "body": "qqwwqwqwqqwwwqwqwwqwqqwqwwqwqwqfffrfrfeefwfweewffewfewfewfwefewfewq"
+        },
+        "unreadMessagesCount": 12,
+        "removed": false,
+        "members": ["1701630538046", "1701630553224", "1701630563273", "1701330503359"]
+    },
+    {
+        "id": "2801462120176",
+        "name": "Bob",
+        "isChannel": false,
+        "isPrivate": true,
+        "isMuted": false,
+        "lastMessage": {
+            "date": 1701431950000,
+            "body": "4336446554 544566555466456 55556655445664 5646647766656466477666 56466477666"
+        },
+        "unreadMessagesCount": 1011,
+        "removed": true,
+        "members": ["1701630553224", "1701330503359"]
+    },
+    {
+        "id": "4701468990191",
+        "name": "Another nameeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "isChannel": true,
+        "isPrivate": true,
+        "isMuted": false,
+        "lastMessage": {
+            "date": 1701417550000,
+            "body": "tetsttetsttetsttetsttetsttetsttetsttetst"
+        },
+        "unreadMessagesCount": 0,
+        "removed": true,
+        "members": ["1701630538046", "1701630553224", "1701630563273", "1701330503359"]
+    },
+    {
+        "id": "3901463450178",
+        "name": "Kiri",
+        "isChannel": false,
+        "isPrivate": true,
+        "isMuted": false,
+        "lastMessage": {
+            "date": 1701626350000,
+            "body": "qqwwqwqwqqwwwqwqwwqwqqwqwwqwqwqwq"
+        },
+        "unreadMessagesCount": 1,
+        "removed": false,
+        "members": ["1701630563273", "1701330503359"]
+    },
+    {
+        "id": "3901463450179",
+        "name": "General",
+        "isChannel": true,
+        "isPrivate": false,
+        "isMuted": false,
+        "lastMessage": {
+            "date": 1701626350000,
+            "body": "123"
+        },
+        "unreadMessagesCount": 1,
+        "removed": false,
+        "members": ["1701630563273", "1701330503359"]
+    },
+    {
+        "id": "3901463350156",
+        "name": "Alice, Bob, Kiri",
+        "isChannel": false,
+        "isPrivate": true,
+        "isMuted": false,
+        "lastMessage": {
+            "date": 1701626350777,
+            "body": "qwerty"
+        },
+        "unreadMessagesCount": 1,
+        "removed": false,
+        "members": ["1701630563273", "1701330503359"]
+    }
+]

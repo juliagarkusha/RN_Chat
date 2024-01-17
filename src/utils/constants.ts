@@ -4,4 +4,5 @@ export const CONSTANTS = {
     CHAT_DATE_SIZE: 90,
     CHAT_BADGE_SIZE: 40,
     GAP: 16,
+    AUTH_TOKEN: 'AUTH_TOKEN'
 }

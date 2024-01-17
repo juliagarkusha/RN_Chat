@@ -1,25 +1,29 @@
 [
   {
-    "id": 1701630538046,
+    "id": "1701630538046",
     "email": "alice@test.com",
+    "password": "123456",
     "name": "alice",
     "isOnline": true
   },
   {
-    "id": 1701630553224,
+    "id": "1701630553224",
     "email": "bob@test.com",
+    "password": "123456",
     "name": "bob",
     "isOnline": true
   },
   {
-    "id": 1701630563273,
+    "id": "1701630563273",
     "email": "kiri@test.com",
+    "password": "123456",
     "name": "kiri",
     "isOnline": true
   },
   {
-    "id": 1701330503359,
+    "id": "1701330503359",
     "email": "magna@test.com",
+    "password": "123456",
     "name": "magna",
     "isOnline": true
   }
